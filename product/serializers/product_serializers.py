@@ -2,7 +2,8 @@ from ..models import Product, Tag, ProductOption
 from rest_framework import serializers
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-class TagSerializer(serializers.ModelSerializer):
+
+class TagSerializer(WritableNestedModelSerializer):
     name = serializers.CharField()
 
     class Meta:
@@ -10,7 +11,7 @@ class TagSerializer(serializers.ModelSerializer):
         fields = ('pk', 'name',)
 
 
-class ProductOptionSerializer(serializers.ModelSerializer):
+class ProductOptionSerializer(WritableNestedModelSerializer):
     name = serializers.CharField()
     price = serializers.IntegerField()
 
@@ -18,13 +19,13 @@ class ProductOptionSerializer(serializers.ModelSerializer):
         model = ProductOption
         fields = ('pk', 'name', 'price',)
 
-class ProductSerializer(serializers.ModelSerializer):
+
+class ProductSerializer(WritableNestedModelSerializer):
     name = serializers.CharField()
 
-    tag_set = TagSerializer(many=True)
-
-    option_set = ProductOptionSerializer(many=True)
+    tag_set = TagSerializer(many=True, read_only=False)
+    option_set = ProductOptionSerializer(many=True, read_only=False)
 
     class Meta:
         model = Product
-        fields = ('pk','name','option_set', 'tag_set',)
+        fields = ('pk', 'name', 'option_set', 'tag_set',)
