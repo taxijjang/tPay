@@ -10,12 +10,14 @@ class ProductViewSet(ModelViewSet):
     serializer_class = ProductSerializer
 
     def list(self, request, *args, **kwargs):
-        qs = self.get_queryset()
+        qs = self.get_queryset().prefetch_related('tag_set').prefetch_related('option_set')
         serializer = self.get_serializer(qs, many=True)
         return Response(data=serializer.data)
 
     def retrieve(self, request, *args, **kwargs):
-        instance = self.get_object()
+        pk = kwargs.pop('pk')
+        qs = self.get_queryset().prefetch_related('tag_set').prefetch_related('option_set')
+        instance = qs.filter(pk=pk)[0]
         serializer = self.get_serializer(instance=instance)
         return Response(data=serializer.data)
 
