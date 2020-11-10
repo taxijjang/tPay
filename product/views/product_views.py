@@ -14,9 +14,7 @@ class ProductViewSet(ModelViewSet):
         return Response(data=serializer.data)
 
     def retrieve(self, request, *args, **kwargs):
-        pk = kwargs.pop('pk')
-        qs = self.get_queryset().prefetch_related('tag_set').prefetch_related('option_set')
-        instance = qs.filter(pk=pk)[0]
+        instance = self.get_object().prefetch_related('tag_set').prefetch_related('option_set')
         serializer = self.get_serializer(instance=instance)
         return Response(data=serializer.data)
 
