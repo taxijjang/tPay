@@ -25,3 +25,5 @@ tPay 코딩 테스트
 
 
 ### API 테스트 방법 또는 Postman Export 결과( Postman Export 파일 또는 Postman Url)
+##### Postman Export
+> - https://documenter.getpostman.com/view/11699885/TVem9oRm 
