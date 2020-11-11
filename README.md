@@ -12,9 +12,9 @@ tPay 코딩 테스트
 - > python manage.py runserver
 
 3. 접속 URL (http://127.0.0.0:8000)
-- > 상품 GET - /shop/products/, /shop/products/<pk>/
+- > 상품 GET - /shop/products/, /shop/products/{pk}/
 - > 상품 POST - /shop/products/
-- > 상품 patch - /shop/products/<pk>/
+- > 상품 patch - /shop/products/{pk}/
  
 ### Docker run (또는 docker-compose up) 실행 방법 및 접속 URL
 ##### docker-compose file을 작성하여 was를 구성 하였습니다.
@@ -28,9 +28,9 @@ tPay 코딩 테스트
 - > docker-compose up --build
 
 - 접속 URL (http://127.0.0.0)
-- > 상품 GET - /shop/products/, /shop/products/<pk>/
+- > 상품 GET - /shop/products/, /shop/products/{pk}/
 - > 상품 POST - /shop/products/
-- > 상품 patch - /shop/products/<pk>/
+- > 상품 patch - /shop/products/{pk}/
 
 ### API 테스트 방법 또는 Postman Export 결과( Postman Export 파일 또는 Postman Url)
 ##### Postman Export
