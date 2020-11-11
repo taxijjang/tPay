@@ -1,14 +1,16 @@
+#./Dockerfile
 FROM python:3.8
+WORKDIR /usr/src/app
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-       postgresql-client \
-    && rm -rf /var/lib/apt/lists/*
+## Install packages
+COPY requirements.txt ./
+RUN pip install -r requirements.txt
 
-COPY . /app
-RUN pip install -r /app/requirements.txt
-RUN chmod 755 /app/start
-WORKDIR /app
+## Copy all src files
+COPY . .
+
+## Run the application on th port 8000
 EXPOSE 8000
 
-ENTRYPOINT ["/app/start"]
+## CMD
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "tpay.wsgi:application"]
