@@ -1,14 +1,12 @@
+#./Dockerfile
 FROM python:3.8
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-       postgresql-client \
-    && rm -rf /var/lib/apt/lists/*
+RUN mkdir /code
+WORKDIR /code
 
-COPY . /app
-RUN pip install -r /app/requirements.txt
-RUN chmod 755 /app/start
-WORKDIR /app
-EXPOSE 8000
+## Install packages
+ADD requirements.txt /code/
+RUN pip install -r requirements.txt
 
-ENTRYPOINT ["/app/start"]
+## Copy all src files
+ADD . /code/

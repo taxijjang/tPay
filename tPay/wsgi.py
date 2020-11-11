@@ -1,5 +1,5 @@
 """
-WSGI config for tPay project.
+WSGI tPay for tPay project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

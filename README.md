@@ -11,19 +11,26 @@ tPay 코딩 테스트
 2. django 실행
 - > python manage.py runserver
 
-3. url 접속 (http://127.0.0.0:8000)
+3. 접속 URL (http://127.0.0.0:8000)
 - > 상품 GET - /shop/products/, /shop/products/<pk>/
 - > 상품 POST - /shop/products/
 - > 상품 patch - /shop/products/<pk>/
  
 ### Docker run (또는 docker-compose up) 실행 방법 및 접속 URL
-##### Docker Hub image
-- > docker run -d -p 8000:8000 --name dockertpay gw9122/dockertpay:latest
-  > URL (http://127.0.0.0:8000)
+##### docker-compose file을 작성하여 was를 구성 하였습니다.
+- WAS 구성요소
+- > Nginx
+- > Gunicorn
+- > Django
 
-##### Docker Hub docker-compose up
-> -
+- docker-compose 실행 방법
+- > docker-compose.yml 파일이 있는 디렉토리로 이동
+- > docker-compose up --build
 
+- 접속 URL (http://127.0.0.0)
+- > 상품 GET - /shop/products/, /shop/products/<pk>/
+- > 상품 POST - /shop/products/
+- > 상품 patch - /shop/products/<pk>/
 
 ### API 테스트 방법 또는 Postman Export 결과( Postman Export 파일 또는 Postman Url)
 ##### Postman Export
