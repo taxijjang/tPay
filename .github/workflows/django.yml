@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mysqldb:
-        image: mysql:latest
+        image: mysql:5.7.30
         env:
            MYSQL_USER: root
            MYSQL_PASSWORD: 1234
