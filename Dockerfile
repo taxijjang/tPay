@@ -9,4 +9,4 @@ ADD requirements.txt /code/
 RUN pip install -r requirements.txt
 
 ## Copy all src files
-ADD . /code
+ADD . /code/
