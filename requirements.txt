@@ -6,4 +6,4 @@ drf-yasg==1.17.1
 gunicorn==20.0.4
 pytest-django==4.1.0
 mysqlclient==2.0.1
-p
+pytest-cov==2.10.1

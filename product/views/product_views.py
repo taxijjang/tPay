@@ -20,14 +20,14 @@ class ProductViewSet(ModelViewSet):
         pk = kwargs.pop('pk')
         instance = self.get_queryset().filter(pk=pk).prefetch_related('tag_set').prefetch_related('option_set').first()
         serializer = self.get_serializer(instance)
-        return Response(data=serializer.data)
+        return Response(status=status.HTTP_200_OK, data=serializer.data)
 
     def create(self, request, *args, **kwargs):
         try:
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             serializer.save()
-            return Response(data=serializer.data)
+            return Response(status=status.HTTP_201_CREATED, data=serializer.data)
 
         except Exception as ex:
             return Response(status=status.HTTP_400_BAD_REQUEST)
