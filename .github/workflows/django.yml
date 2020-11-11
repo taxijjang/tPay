@@ -9,16 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    services:
-      mysqldb:
-        image: mysql:5.7.30
-        env:
-           MYSQL_USER: root
-           MYSQL_PASSWORD: 1234
-           MYSQL_DATABASE: db
-           MYSQL_ROOT_PASSWORD: 1234
-        ports:
-          - 3306:3306
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.8
