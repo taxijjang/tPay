@@ -38,3 +38,7 @@ tPay 코딩 테스트
 ##### Postman Export
 
 > - https://documenter.getpostman.com/view/11699885/TVem9oRm 
+
+
+##### git action을 이용하여 CI 구축완료
+##### pytest를 이용하여 API unit-test 완료
