@@ -16,7 +16,8 @@ tPay 코딩 테스트
 - > 상품 GET - /shop/products/, /shop/products/{pk}/
 - > 상품 POST - /shop/products/
 - > 상품 patch - /shop/products/{pk}/
- 
+
+---
 ### Docker run (또는 docker-compose up) 실행 방법 및 접속 URL
 ##### docker-compose file을 작성하여 was를 구성 하였습니다.
 
@@ -34,11 +35,13 @@ tPay 코딩 테스트
 - > 상품 POST - /shop/products/
 - > 상품 patch - /shop/products/{pk}/
 
+---
 ### API 테스트 방법 또는 Postman Export 결과( Postman Export 파일 또는 Postman Url)
 ##### Postman Export
 
 > - https://documenter.getpostman.com/view/11699885/TVem9oRm 
 
 
-##### git action을 이용하여 CI 구축완료
-##### pytest를 이용하여 API unit-test 완료
+### git action을 이용하여 CI 구축완료
+---
+### pytest를 이용하여 API unit-test 완료
