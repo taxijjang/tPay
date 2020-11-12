@@ -21,9 +21,9 @@ if settings.DEBUG:
 # swagger 엔드포인트는 DEBUG Mode에서만 노출
 schema_view = get_schema_view(
     openapi.Info(
-        title="tPay coding test API",
+        title="config coding test API",
         default_version='v1',
-        description="안녕하세요 김택윤 입니다. tPay coding test API",
+        description="안녕하세요 김택윤 입니다. config coding test API",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="gw9122@naver.com"),
         license=openapi.License(name="BSD License"),
