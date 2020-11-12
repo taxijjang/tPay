@@ -19,7 +19,7 @@ tPay 코딩 테스트
 
 ---
 ### Docker run (또는 docker-compose up) 실행 방법 및 접속 URL
-##### docker-compose file을 작성하여 was를 구성 하였습니다.
+##### docker-compose file을 작성하여 was를 구성
 
 1. WAS 구성요소
 - > Nginx
@@ -41,7 +41,9 @@ tPay 코딩 테스트
 
 > - https://documenter.getpostman.com/view/11699885/TVem9oRm 
 
-
+---
 ### git action을 이용하여 CI 구축완료
+- feature branch에서 develop branch로 pr요청시 git action 작동
 ---
 ### pytest를 이용하여 API unit-test 완료
+- 각각의 api에 대하여 unit test 진행
