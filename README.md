@@ -1,7 +1,3 @@
-# tPay
-tPay 코딩 테스트
-
-
 ### Django runserver 실행 방법 및 접속 URL
 
 1. 가상환경 생성 후 패키지 설치
