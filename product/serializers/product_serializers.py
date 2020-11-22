@@ -1,9 +1,10 @@
 from ..models import Product, Tag, ProductOption
 from rest_framework import serializers
-from drf_writable_nested.serializers import WritableNestedModelSerializer
+from drf_writable_nested.serializers import WritableNestedModelSerializer, NestedUpdateMixin
+from drf_writable_nested.mixins import UniqueFieldsMixin
 
 
-class TagSerializer(WritableNestedModelSerializer):
+class TagSerializer(UniqueFieldsMixin, NestedUpdateMixin, serializers.ModelSerializer):
     name = serializers.CharField()
 
     class Meta:
@@ -11,7 +12,7 @@ class TagSerializer(WritableNestedModelSerializer):
         fields = ('pk', 'name',)
 
 
-class ProductOptionSerializer(WritableNestedModelSerializer):
+class ProductOptionSerializer(serializers.ModelSerializer):
     name = serializers.CharField()
     price = serializers.IntegerField()
 
