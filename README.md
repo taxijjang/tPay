@@ -8,7 +8,7 @@
 2. django 실행
 - > python manage.py runserver
 
-3. 접속 URL (http://127.0.0.0:8000)
+3. 접속 URL (http://127.0.0.1:8000)
 - > 상품 GET - /shop/products/, /shop/products/{pk}/
 - > 상품 POST - /shop/products/
 - > 상품 patch - /shop/products/{pk}/
@@ -26,7 +26,7 @@
 - > docker-compose.yml 파일이 있는 디렉토리로 이동
 - > docker-compose up --build
 
-3. 접속 URL (http://127.0.0.0)
+3. 접속 URL (http://127.0.0.1)
 - > 상품 GET - /shop/products/, /shop/products/{pk}/
 - > 상품 POST - /shop/products/
 - > 상품 patch - /shop/products/{pk}/
